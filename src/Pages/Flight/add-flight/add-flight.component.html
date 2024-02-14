@@ -1,0 +1,95 @@
+<div class="container">
+    <h2>Add Flight</h2>
+    <form name="flightForm" #f="ngForm" (ngSubmit)="f.form.valid && addflight()">
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="flightNumber">Flight Number</label>
+                        <input type="text" id="flightNumber" class="form-control" name="flightNumber"
+                            [(ngModel)]="flight.flightNumber" required #flightNumber="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && flightNumber.errors }" />
+                        <div *ngIf="f.submitted && flightNumber.errors" class="invalid-feedback">
+                            <div *ngIf="flightNumber.errors['required']">Flight Number is required</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="airlineName">Airline Name</label>
+                        <input type="text" id="airlineName" class="form-control" name="airlineName"
+                            [(ngModel)]="flight.airlineName" required #airlineName="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && airlineName.errors }" />
+                        <div *ngIf="f.submitted && airlineName.errors" class="invalid-feedback">
+                            <div *ngIf="airlineName.errors['required']">Airline Name is required</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- Departure City -->
+                    <input type="text" id="departureCity" class="form-control" name="departureCity"
+                        [(ngModel)]="flight.depatureCity" required #departureCity="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && departureCity.errors }" />
+                    <div *ngIf="f.submitted && departureCity.errors" class="invalid-feedback">
+                        <div *ngIf="departureCity.errors['required']">Departure City is required</div>
+                    </div>
+                </td>
+                <td>
+                    <!-- Departure Time -->
+                    <input type="datetime-local" id="departureTime" class="form-control" name="departureTime"
+                        [(ngModel)]="flight.depatureTime" required #departureTime="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && departureTime.errors }" />
+                    <div *ngIf="f.submitted && departureTime.errors" class="invalid-feedback">
+                        <div *ngIf="departureTime.errors['required']">Departure Time is required</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="arrivalCity">Arrival City</label>
+                        <input type="text" id="arrivalCity" class="form-control" name="arrivalCity"
+                            [(ngModel)]="flight.arrivalCity" required #arrivalCity="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && arrivalCity.errors }" />
+                        <div *ngIf="f.submitted && arrivalCity.errors" class="invalid-feedback">
+                            <div *ngIf="arrivalCity.errors['required']">Arrival City is required</div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="arrivalTime">Arrival Time</label>
+                        <input type="datetime-local" id="arrivalTime" class="form-control" name="arrivalTime"
+                            [(ngModel)]="flight.arrivalTime" required #arrivalTime="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && arrivalTime.errors }" />
+                        <div *ngIf="f.submitted && arrivalTime.errors" class="invalid-feedback">
+                            <div *ngIf="arrivalTime.errors['required']">Arrival Time is required</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="form-group">
+                        <label for="ticketprice">Ticket Price</label>
+                        <input type="number" id="ticketprice" class="form-control" name="ticketprice"
+                            [(ngModel)]="flight.ticketprice" required #ticketprice="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && ticketprice.errors }" />
+                        <div *ngIf="f.submitted && ticketprice.errors" class="invalid-feedback">
+                            <div *ngIf="ticketprice.errors['required']">Ticket Price is required</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Add Flight</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

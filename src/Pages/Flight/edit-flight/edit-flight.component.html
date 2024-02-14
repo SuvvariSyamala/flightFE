@@ -1,0 +1,52 @@
+<div class="container">
+    <h3>Edit Flight</h3>
+    <table class="table">
+        <tr>
+            <td>Flight Number</td>
+            <td>
+                <input type="text" [(ngModel)]="flight.flightNumber" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Airline Name</td>
+            <td>
+                <input type="text" [(ngModel)]="flight.airlineName" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Departure City</td>
+            <td>
+                <input type="text" [(ngModel)]="flight.depatureCity" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Arrival City</td>
+            <td>
+                <input type="text" [(ngModel)]="flight.arrivalCity" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Departure Time</td>
+            <td>
+                <input type="datetime-local" [(ngModel)]="flight.depatureTime" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Arrival Time</td>
+            <td>
+                <input type="datetime-local" [(ngModel)]="flight.arrivalTime" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td>Ticket Price</td>
+            <td>
+                <input type="number" [(ngModel)]="flight.ticketprice" class="form-control">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button class="btn btn-primary" (click)="edit()">Save</button>
+            </td>
+        </tr>
+    </table>
+</div>

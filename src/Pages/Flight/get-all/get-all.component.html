@@ -1,0 +1,35 @@
+<div class="container">
+    <h3>All Flights</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>flightNumber</th>
+          <th>airlineName</th>
+          <th>depatureCity</th>
+          <th>arrivalCity</th>
+          <th>depatureTime</th>
+          <th>arrivalTime</th>
+          <th> ticketprice</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td>{{ flight.flightNumber }}</td>
+          <td>{{ flight.airlineName }}</td>
+          <td>{{ flight.depatureCity }}</td>
+          <td>{{ flight.arrivalCity }}</td>
+          <td>{{ flight.depatureTime }}</td>
+          <td>{{ flight.arrivalTime}}</td>
+          <td>{{ flight.ticketprice}}</td>
+
+          <td  *ngIf="isEligible">
+            
+            <button class="btn btn-primary" (click)="edit(flight.flightNumber)">Edit</button>
+            <button class="btn btn-danger" (click)="delete(flight.flightNumber)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
